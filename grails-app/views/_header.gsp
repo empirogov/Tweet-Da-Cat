@@ -29,7 +29,7 @@
                                 <div class="clear"></div>
                                 <div class="error">С этим адресом что-то не то...</div>
                             </div>
-                            <div class="submit">Хочу котика!</div>
+                            <div class="submit" data-target="/register">Хочу котика!</div>
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                                 <div class="clear"></div>
                                 <div class="error">Неверный пароль. Ещё раз?</div>
                             </div>
-                            <div class="submit">Хочу котика!</div>
+                            <div class="submit" data-target="/auth/login">Хочу котика!</div>
                         </div>
                     </div>
                 </div>
