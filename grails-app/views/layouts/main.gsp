@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'normalize.css')}">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}">
     <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <g:layoutHead/>
+    <r:layoutResources />
 </head>
 <body>
 <div class="body-wrapper">
