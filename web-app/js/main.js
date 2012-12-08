@@ -33,17 +33,60 @@ initHiddenForms = function () {
             $victimSource = $(this).next(victimSelector),
             $victimTarget = $('.body-wrapper');
         if ($victimSource.length) {
-            $victimSource
-                .attr('id', victimSelector.replace('#','_'))
-                .clone()
-                    .attr('id', victimSelector.replace('_', ''))
+            var $existingVictim = $(victimSelector.replace('ion', 'ion-active'));
+            if ($existingVictim.length) {
+                $existingVictim.fadeIn();
+            } else {
+                $victimSource
+                    .children()
+                    .clone()
+                    .attr('id', victimSelector.replace('ion', 'ion-active').replace('#', ''))
                     .insertAfter($victimTarget)
                     .removeClass('hidden')
                     .hide()
-                    .fadeIn();
-
+                    .fadeIn()
+                    .on('click', function () {
+                        $(this).fadeOut();
+                        $('body').removeClass('fixed');
+                    })
+                    .children()
+                    .on('click', function (e) {
+                        e.stopPropagation();
+                    })
+                    .find('.submit')
+                    .on('click', function (e) {
+                        sendAuthRequest(e.currentTarget);
+                    });
+            };
+            $('body').addClass('fixed');
         };
         return false;
+    });
+};
+
+sendAuthRequest = function (el) {
+    var $elt = $(el),
+        target = $elt.data('target'),
+        dataToSend = {};
+    $elt.closest('.popup-mask')
+        .find('input')
+        .each(function() {
+            dataToSend[$(this).attr('name')] = $(this).val();
+        });
+    $.ajax({
+        url: target,
+        data: dataToSend,
+        timeout: 2000,
+        complete: function (answer) {
+            if ($.parseJSON(answer).result == 'SUCCESS') {
+                window.location.href = '/';
+            } else {
+                return false;
+            };
+        },
+        error: function () {
+            alert('Конденсат в карбюраторе!');
+        }
     });
 };
 
