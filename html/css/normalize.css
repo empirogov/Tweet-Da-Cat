@@ -81,7 +81,7 @@ button,
 input,
 select,
 textarea {
-    font-family: sans-serif;
+    font-family: Tahoma;
 }
 
 /*
@@ -501,4 +501,39 @@ textarea {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+/*  =========================================================================
+    Floats
+    ========================================================================= */
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+:focus{
+    outline: 0;
 }
