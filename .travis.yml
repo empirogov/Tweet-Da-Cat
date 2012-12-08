@@ -9,5 +9,5 @@ before_install:
 - sudo apt-get install grails-2.1.1
 
 script:
-- grails upgrade
+#- grails upgrade
 - grails test-app
