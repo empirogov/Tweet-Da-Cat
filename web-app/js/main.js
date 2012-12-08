@@ -4,6 +4,8 @@ $(document).ready(function(){
 
     initScrollTop();
 
+    noBorderHover();
+
 });
 
 initScrollTop = function () {
@@ -23,5 +25,10 @@ initScrollTop = function () {
             scrollTop: 0
         }, 1000);
         return false;
+    });
+};
+noBorderHover = function(){
+    $('a').focus(function(){
+        $(this).blur();
     });
 };
