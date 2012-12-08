@@ -45,4 +45,7 @@
 
 # other
 *.iws
+/.idea
+/*.iws
+/*.ipr
 
