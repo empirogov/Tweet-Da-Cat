@@ -78,7 +78,8 @@ sendAuthRequest = function (el) {
         data: dataToSend,
         timeout: 2000,
         complete: function (answer) {
-            if ($.parseJSON(answer).result == 'SUCCESS') {
+
+            if ($.parseJSON(answer.responseText).result == 'SUCCESS') {
                 window.location.href = '/';
             } else {
                 return false;
