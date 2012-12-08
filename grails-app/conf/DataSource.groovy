@@ -5,7 +5,7 @@ dataSource {
     dbCreate = "create"
     username = "tweet_da_cat"
     password = "agent007"
-    dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+    dialect = org.hibernate.dialect.MySQLDialect
 }
 hibernate {
     cache.use_second_level_cache = true
