@@ -9,8 +9,8 @@ screen 480px
     .poisk-container{
         clear: both;
         float: left;
-        width: 98%;
-        margin: 10px 0 0 10px;
+        width: 100%;
+        margin-top: 10px;
     }
 
 }
@@ -152,12 +152,12 @@ body{
     color: #666666;
 }
 a.registration{
-    background-image: url("../img/zvezda.gif");
+    background-image: url("../img/zvezda.png");
     background-position: 10px center;
     padding-left: 39px;
 }
 a.login{
-    background-image: url("../img/door.gif");
+    background-image: url("../img/door.png");
     background-position: 12px center;
     padding-left: 36px;
 }
@@ -185,7 +185,7 @@ a.login{
 }
 .poisk-container input[type='button']{
     display: block;
-    background: url("../img/lupa.gif") no-repeat center;
+    background: url("../img/lupa.png") no-repeat center;
     height: 24px;
     width: 24px;
     float: right;
@@ -235,7 +235,7 @@ a.login{
     float: left;
     height: 50px;
     margin-top: 10px;
-    background: url("../img/scrollTop.gif") no-repeat center 24px;
+    background: url("../img/scrollTop.png") no-repeat center 24px;
     font-size: 16px;
     color: #666666;
     text-align: center;
@@ -243,7 +243,8 @@ a.login{
     line-height: 40px;
 }
 .scrollTop a:hover{
-    background-color: #ccd0e5;
+    color: #cc6600;
+    background: url("../img/scrollTop_hv.png") no-repeat center 24px;
 }
 /* ==========================================================================
    Main content
