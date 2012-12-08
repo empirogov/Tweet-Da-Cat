@@ -1,12 +1,12 @@
-//dataSource {
-//    pooled = true
-//    driverClassName = "com.mysql.jdbc.Driver"
-//    url = "jdbc:mysql://i2dev.ru/tweet_da_cat"
-//    dbCreate = "create"
-//    username = "tweet_da_cat"
-//    password = "agent007"
-//    dialect = org.hibernate.dialect.MySQL5InnoDBDialect
-//}
+dataSource {
+    pooled = true
+    driverClassName = "com.mysql.jdbc.Driver"
+    url = "jdbc:mysql://i2dev.ru/tweet_da_cat"
+    dbCreate = "create"
+    username = "tweet_da_cat"
+    password = "agent007"
+    dialect = org.hibernate.dialect.MySQLDialect
+}
 hibernate {
     cache.use_second_level_cache = true
     cache.use_query_cache = false
