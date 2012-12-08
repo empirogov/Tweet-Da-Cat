@@ -4,21 +4,8 @@ import static org.junit.Assert.*
 import org.junit.*
 
 class UserIntegraionTests {
-
-    def user
-
     @Before
     void setUp() {
-        user = new User(
-            email: "test@test.com",
-            name: "Test User",
-            nickname: "test_user",
-            password: "12345"
-        )
-
-        println(user)
-
-        user.save()
     }
 
     @After
@@ -28,9 +15,9 @@ class UserIntegraionTests {
     @Test
     void testUserCanSave() {
         def newUser = new User(
-                    email: "test@test.com",
+                    email: "test1@test.com",
                     name: "Test User",
-                    nickname: "test_user",
+                    nickname: "test1_user",
                     password: "12345"
         )
         newUser.save(flush: true)
@@ -39,9 +26,15 @@ class UserIntegraionTests {
 
     @Test
     void testUserCanUpdate() {
+        def user = new User(
+                email: "test@test.com",
+                name: "Test User",
+                nickname: "test_user",
+                password: "12345"
+        )
+        user.save()
         def newName = "new name"
 
-        println user
         def testUser = User.get(user.id)
         testUser.name = newName
         testUser.save(flush: true)
@@ -51,6 +44,7 @@ class UserIntegraionTests {
 
     @Test
     void testUserCanDelete() {
+        def user = User.first()
         user.delete()
         assertFalse User.exists(user.id)
     }

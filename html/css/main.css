@@ -113,6 +113,10 @@ screen 1281px
 body{
     background: #aaaaaa;
 }
+
+.body-wrapper {
+    overflow: hidden;
+}
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -166,14 +170,18 @@ a.login{
 }
 .poisk-container input{
     display: block;
+    float: left;
     width: 525px;
+
+    height: 24px;
+    padding: 10px 0;
     margin: 0 0 0 10px;
-    height: 44px;
-    line-height: 44px;
+
+    font-size: 16px;
+    line-height: 24px;
+
     color: #666666;
     border: 0;
-    padding: 0;
-    float: left;
 }
 .poisk-container input[type='button']{
     display: block;
