@@ -2,8 +2,7 @@
     <ul>
     <g:each in="${posts}" var="post">
         <li>
-            <b>${post.author.nickname}</b>
-            ${post.content}
+            <g:render template="/post/post" model="[post: post]" />
         </li>
     </g:each>
     </ul>
