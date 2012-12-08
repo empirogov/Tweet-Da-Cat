@@ -80,7 +80,7 @@ sendAuthRequest = function (el) {
         complete: function (answer) {
 
             if ($.parseJSON(answer.responseText).result == 'SUCCESS') {
-                window.location.href = '/';
+                window.location.href = getHomeUrl();
             } else {
                 return false;
             };
@@ -89,5 +89,9 @@ sendAuthRequest = function (el) {
             alert('Конденсат в карбюраторе!');
         }
     });
+};
+
+getHomeUrl = function () {
+    return $('body').data('homeurl');
 };
 
