@@ -32,7 +32,7 @@ screen 480-720px
 /* ==========================================================================
 screen 721-1280px
 ========================================================================== */
-@media only screen and (min-width: 721px) and (max-width: 1280px) {
+@media only screen and (min-width: 721px) and (max-width: 1440px) {
 
     .header-container, .main, .footer-container {
         -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
@@ -61,7 +61,7 @@ screen 721-1280px
 /* ==========================================================================
 screen 1281px
 ========================================================================== */
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 1441px) {
 
     .header-container, .main, .footer-container {
         -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
