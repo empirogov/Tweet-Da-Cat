@@ -6,9 +6,7 @@ class AuthorizeController {
     def authService
 
     def login() {
-        User u = User.findByEmailAndPassword(params.email, params.password)
-        if (u) {
-            authService.setUser(u.id)
+        if (authService.authorize(params.email, params.password)) {
             render getResult("SUCCESS") as JSON
             return
         }
