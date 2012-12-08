@@ -8,6 +8,15 @@ class AuthService {
     static transactional = false
     static scope = "singleton"
 
+    def authorize(String email, String password) {
+        User u = User.findByEmailAndPassword(email, password)
+        if (u) {
+            setUser(u.id)
+            return true
+        }
+        return false
+    }
+
     def setUser(userId) {
         getSession().userId = userId
     }
