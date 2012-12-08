@@ -43,8 +43,8 @@
                                 <h1 class="popup-title">Авторизация</h1>
                             </header>
                             <div class="field-box">
-                                <div class="field-help">Логин:</div>
-                                <input type="text" name="login" placeholder="Отображаемое имя юзверя"/>
+                                <div class="field-help">E-mail:</div>
+                                <input type="text" name="email" placeholder="Отображаемое имя юзверя"/>
                                 <div class="clear"></div>
                                 <div class="error">Имя пользователя не найдено. Потерялось наверное...</div>
                             </div>
@@ -54,7 +54,7 @@
                                 <div class="clear"></div>
                                 <div class="error">Неверный пароль. Ещё раз?</div>
                             </div>
-                            <div class="submit" data-target="/auth/login">Хочу котика!</div>
+                            <div class="submit" data-target="${createLink(controller: "authorize", action: 'login')}">Хочу котика!</div>
                         </div>
                     </div>
                 </div>
