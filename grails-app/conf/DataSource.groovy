@@ -1,20 +1,26 @@
 dataSource {
     pooled = true
-    driverClassName = "org.h2.Driver"
-    username = "sa"
-    password = ""
+    driverClassName = "com.mysql.jdbc.Driver"
+    url = "jdbc:mysql://i2dev.ru/tweet_da_cat"
+    dbCreate = "create"
+    username = "tweet_da_cat"
+    password = "agent007"
+    dialect = org.hibernate.dialect.MySQLDialect
 }
 hibernate {
     cache.use_second_level_cache = true
     cache.use_query_cache = false
-    cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
+//    cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
 }
 // environment specific settings
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            dbCreate = "update" // one of 'create', 'create-drop','update'
+            url = "jdbc:h2:mem:devDb"
+            driverClassName = "org.h2.Driver"
+            username = "sa"
+            password = ""
         }
     }
     test {
