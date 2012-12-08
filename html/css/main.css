@@ -6,6 +6,12 @@ screen 480px
     .wrapper {
         width: 100%;
     }
+    .poisk-container{
+        clear: both;
+        float: left;
+        width: 98%;
+        margin: 10px 0 0 10px;
+    }
 
 }
 /* ==========================================================================
@@ -121,7 +127,7 @@ body{
     z-index: 2;
 }
 .header-container{
-    height: 70px;
+    padding:10px 0;
     border-bottom: 1px #ffffff solid;
 }
 .authorization-container a, .poisk-container{
@@ -132,7 +138,6 @@ body{
 .authorization-container{
        height: 44px;
        float: left;
-       margin-top: 20px;
    }
 .authorization-container a{
     display: block;
@@ -160,7 +165,7 @@ a.login{
     height: 44px;
     width: 580px;
     float: right;
-    margin: 20px 10px 0 0;
+    margin: 0 10px 0 0;
     background: #ffffff;
 }
 .poisk-container input{

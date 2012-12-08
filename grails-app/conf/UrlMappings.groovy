@@ -13,14 +13,14 @@ class UrlMappings {
 			}
 		}
 
-		"/"(view:"/index")
+		"/"(
+                controller: "mainView",
+                action: "index"
+        )
         "500"(view:'/error')
-//        "404"(view:'/error')
         "/authorize/login/$email/$password?"(
                 controller: "authorize",
                 action: "login"
         )
-
-
     }
 }
