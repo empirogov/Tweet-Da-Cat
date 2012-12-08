@@ -12,6 +12,8 @@ class FeedController {
     def index() { }
 
     def listFiltered() {
+        String filter = getFilter()
+        String viewType = getViewType()
         def posts = Post.list([max: MAX_POSTS, order: 'desc', sort: 'dateCreated'])
         render posts as JSON
     }
