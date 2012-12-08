@@ -36,11 +36,5 @@
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 
-<!-- [НЕВЕДОМАЯ ЙОПАННАЯ ...] -->
-<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-<g:javascript library="application"/>
-<r:layoutResources />
-<!-- [/НЕВЕДОМАЯ ЙОПАННАЯ ...] -->
-
 </body>
 </html>
