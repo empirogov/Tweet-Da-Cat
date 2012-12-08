@@ -1,5 +1,6 @@
 # Intellij IDEA files ignore
 .idea
+.idea/*
 *.iml
 
 # .gitignore for Grails 1.2 and 1.3
@@ -48,4 +49,9 @@
 /.idea
 /*.iws
 /*.ipr
-
+Tweet-Da-Cat-grailsPlugins.iml
+/Tweet-Da-Cat-grailsPlugins.iml
+Tweet-Da-Cat.iml
+/Tweet-Da-Cat.iml
+application.properties
+/application.properties
