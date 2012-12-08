@@ -99,6 +99,39 @@
                 </footer>
             </div>
         </div>
+        <div id="registration" class="popup-mask">
+            <div class="popup-wrapper">
+                <header class="popup-header">
+                    <h1 class="popup-title">Регистрация</h1>
+                </header>
+
+                    <div class="field-help">Логин:</div>
+                    <input type="text" name="login" />
+                    <div class="error">Пользователь с таким именем здесь уже есть</div>
+                    <div class="field-help">Пароль:</div>
+                    <input type="password" name="password" />
+                    <div class="error">Слишком сложно чтобы запомнить. Может попробовать что-нибудь попроще?</div>
+                    <div class="field-help">E-mail:</div>
+                    <input type="email" name="email" />
+                    <div class="error">С этим адресом что-то не то...</div>
+
+            </div>
+        </div>
+        <div id="authorization" class="popup-mask">
+            <div class="popup-wrapper">
+                <header class="popup-header">
+                    <h1 class="popup-title">Авторизация</h1>
+                </header>
+
+                    <div class="field-help">Логин:</div>
+                    <input type="text" name="login" />
+                    <div class="error">Имя пользователя не найдено. Потерялось наверное...</div>
+                    <div class="field-help">Пароль:</div>
+                    <input type="password" name="password" />
+                    <div class="error">Неверный пароль. Ещё раз?</div>
+
+            </div>
+        </div>
         <script src="../js/jquery-1.8.3.min.js"></script>
         <script src="../js/jquery.tweet-da-cat.placeholders.js"></script>
         <script src="../js/plugins.js"></script>

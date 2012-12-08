@@ -32,7 +32,7 @@ screen 480-720px
 /* ==========================================================================
 screen 721-1280px
 ========================================================================== */
-@media only screen and (min-width: 721px) and (max-width: 1280px) {
+@media only screen and (min-width: 721px) and (max-width: 1440px) {
 
     .header-container, .main, .footer-container {
         -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
@@ -61,7 +61,7 @@ screen 721-1280px
 /* ==========================================================================
 screen 1281px
 ========================================================================== */
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 1441px) {
 
     .header-container, .main, .footer-container {
         -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
@@ -121,6 +121,12 @@ body{
 .body-wrapper {
     overflow: hidden;
 }
+a{
+    transition: color 1s linear;
+    -webkit-transition: color 1s linear;
+    -moz-transition: color 1s linear;
+    -o-transition: color 1s linear;
+}
 a:hover, a:active{
     color: #C60;
 }
@@ -157,6 +163,10 @@ a:hover, a:active{
     background-color: #ffffff;
     margin-left: 10px;
     color: #666666;
+    transition:background-image 1s linear;
+    -webkit-transition:background-image 1s linear;
+    -moz-transition:background-image 1s linear;
+    -o-transition:background-image 1s linear;
 }
 .authorization-container a:hover{
     color: #C60;
@@ -207,6 +217,10 @@ a.login:hover{
     float: right;
     margin:5px  10px 0;
     padding: 0;
+    transition: background 1s linear;
+    -webkit-transition: background 1s linear;
+    -moz-transition: background 1s linear;
+    -o-transition: background 1s linear;
 }
 .poisk-container input:focus{
     color: #C60;
@@ -218,7 +232,7 @@ a.login:hover{
    Footer
    ========================================================================== */
 .footer-container{
-   height: 127px;
+   height: 115px;
     border-top: 1px #ffffff solid;
 }
 .copyright{
@@ -267,6 +281,10 @@ a.login:hover{
     text-align: center;
     text-decoration: none;
     line-height: 40px;
+    transition:background 1s linear;
+    -webkit-transition:background 1s linear;
+    -moz-transition:background 1s linear;
+    -o-transition:background 1s linear;
 }
 .scrollTop a:hover{
     color: #cc6600;
@@ -312,4 +330,29 @@ article.tweet-container {
     color: #909;
     font-size: 18px;
     line-height: 27px;
+}
+
+/*  ========================================================================
+    Registration & Authorization forms
+    ======================================================================== */
+
+.popup-wrapper {
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    margin: 0 auto;
+    padding: 20px;
+    width: 440px;
+}
+
+h1.popup-title {
+    text-align: center;
+}
+
+.error {
+    display: none;
 }
