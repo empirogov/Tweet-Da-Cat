@@ -351,6 +351,49 @@ article.tweet-container {
     line-height: 27px;
 }
 
+.paginator {
+    margin: 20px auto 30px;
+    height: 30px;
+    width: 50%;
+}
+
+.sprite-arrow {
+    background-image: url("../img/arrows-sprite.png");
+    background-repeat: no-repeat;
+}
+
+a.sprite-arrow {
+    display: block;
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 10px;
+    vertical-align: middle;
+    transition:background 1s linear;
+    -webkit-transition:background 1s linear;
+    -moz-transition:background 1s linear;
+    -o-transition:background 1s linear;
+    cursor: pointer;
+}
+
+a.previous {
+    padding-left: 36px;
+    background-position: 0 -90px;
+}
+
+a.previous:hover {
+    background-position: 0 -120px;
+}
+
+a.next {
+    padding-right: 36px;
+    background-position: right 0;
+    text-align: right;
+}
+
+a.next:hover {
+    background-position: right -30px;
+}
 /*  ========================================================================
     Registration & Authorization forms
     ======================================================================== */
@@ -373,6 +416,9 @@ h1.popup-title {
     text-align: center;
 }
 
+.field-box {
+    margin-bottom: 10px;
+}
 .field-help {
     color: #333;
     float: left;

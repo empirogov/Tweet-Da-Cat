@@ -98,8 +98,9 @@ sendAuthRequest = function (el) {
         data: dataToSend,
         timeout: 2000,
         complete: function (answer) {
-            if ($.parseJSON(answer).result == 'SUCCESS') {
-                window.location.href = '/';
+
+            if ($.parseJSON(answer.responseText).result == 'SUCCESS') {
+                window.location.href = getHomeUrl();
             } else {
                 return false;
             };
@@ -108,5 +109,9 @@ sendAuthRequest = function (el) {
             alert('Конденсат в карбюраторе!');
         }
     });
+};
+
+getHomeUrl = function () {
+    return $('body').data('homeurl');
 };
 
