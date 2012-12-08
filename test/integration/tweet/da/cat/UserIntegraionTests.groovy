@@ -16,8 +16,9 @@ class UserIntegraionTests {
             password: "12345"
         )
 
+        println(user)
 
-        user.save(flush: true)
+        user.save()
     }
 
     @After
@@ -36,9 +37,11 @@ class UserIntegraionTests {
         assertTrue User.findByEmail(newUser.email).name == newUser.name
     }
 
+    @Test
     void testUserCanUpdate() {
         def newName = "new name"
 
+        println user
         def testUser = User.get(user.id)
         testUser.name = newName
         testUser.save(flush: true)
@@ -46,6 +49,7 @@ class UserIntegraionTests {
         assertTrue User.findByName(newName) == testUser
     }
 
+    @Test
     void testUserCanDelete() {
         user.delete()
         assertFalse User.exists(user.id)
