@@ -117,6 +117,9 @@ body{
 .body-wrapper {
     overflow: hidden;
 }
+a:hover, a:active{
+    color: #C60;
+}
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -138,7 +141,7 @@ body{
 .authorization-container{
        height: 44px;
        float: left;
-   }
+}
 .authorization-container a{
     display: block;
     float: left;
@@ -151,15 +154,24 @@ body{
     margin-left: 10px;
     color: #666666;
 }
+.authorization-container a:hover{
+    color: #C60;
+}
 a.registration{
     background-image: url("../img/zvezda.png");
     background-position: 10px center;
     padding-left: 39px;
 }
+a.registration:hover{
+   background-image: url("../img/zvezda_hv.png");
+}
 a.login{
     background-image: url("../img/door.png");
     background-position: 12px center;
     padding-left: 36px;
+}
+a.login:hover{
+    background-image: url("../img/door_hv.png");
 }
 .poisk-container{
     height: 44px;
@@ -171,7 +183,7 @@ a.login{
 .poisk-container input{
     display: block;
     float: left;
-    width: 525px;
+    width: 515px;
 
     height: 24px;
     padding: 10px 0;
@@ -186,10 +198,17 @@ a.login{
 .poisk-container input[type='button']{
     display: block;
     background: url("../img/lupa.png") no-repeat center;
-    height: 24px;
-    width: 24px;
+    height: 34px;
+    width: 34px;
     float: right;
-    margin:10px  10px 0;
+    margin:5px  10px 0;
+    padding: 0;
+}
+.poisk-container input:focus{
+    color: #C60;
+}
+.poisk-container input[type='button']:hover{
+    background: url("../img/lupa_hv.png") no-repeat center;
 }
 /* ==========================================================================
    Footer
@@ -198,9 +217,12 @@ a.login{
    height: 127px;
     border-top: 1px #ffffff solid;
 }
+.copyright{
+    margin: 30px 0 0 10px;
+}
 .copyright p{
     font-size: 12px;
-    line-height: 18px;
+    line-height: 10px;
     color: #444444;
 }
 /* ==========================================================================
@@ -253,7 +275,6 @@ a.login{
     width: inherit;
 }
 .main{
-    height: 1000px;
     background: #ffffff;
     position: relative;
     z-index: 1;
