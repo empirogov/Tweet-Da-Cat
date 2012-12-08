@@ -1,5 +1,5 @@
 # Intellij IDEA files ignore
-idea
+.idea
 *.iml
 
 # .gitignore for Grails 1.2 and 1.3
