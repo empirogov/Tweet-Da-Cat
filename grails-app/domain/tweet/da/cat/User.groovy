@@ -2,6 +2,8 @@ package tweet.da.cat
 
 class User {
 
+    String avatar
+
     String email
     String name
     String nickname
@@ -21,6 +23,7 @@ class User {
         nickname(unique: true, blank: false, nullable: false, size: 3..15)
         name(size: 3..20, nullable: true)
         password(size: 5..15, nullable: false)
+        avatar(nullable: true)
     }
 
     static hasMany = [following: User, posts: Post]
