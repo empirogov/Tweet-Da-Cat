@@ -27,8 +27,3 @@ initScrollTop = function () {
         return false;
     });
 };
-noBorderHover = function(){
-    $('a').focus(function(){
-        $(this).blur();
-    });
-};
