@@ -81,7 +81,7 @@ button,
 input,
 select,
 textarea {
-    font-family: Arial, Tahoma, Verdana;
+    font-family: Arial, Tahoma, Verdana, sans-serif;
 }
 
 /*
