@@ -1,3 +1,100 @@
+/* ==========================================================================
+screen 480px
+========================================================================== */
+@media only screen and (max-width: 480px) {
+
+    .wrapper {
+        width: 100%;
+    }
+
+}
+/* ==========================================================================
+screen 480-720px
+========================================================================== */
+@media only screen and (min-width: 480px) and (max-width: 720px) {
+
+    .wrapper {
+        width: 100%;
+    }
+
+    .main article {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+}
+/* ==========================================================================
+screen 721-1280px
+========================================================================== */
+@media only screen and (min-width: 721px) and (max-width: 1280px) {
+
+    .header-container, .main, .footer-container {
+        -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+        box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    }
+
+    .wrapper{
+        width: 90%;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .main.wrapper {
+        margin: 0 auto;
+        max-width: 960px;
+        width: 90%;
+    }
+
+    .main article {
+        width: 100%;
+        padding: 0 60px;
+    }
+
+}
+/* ==========================================================================
+screen 1281px
+========================================================================== */
+@media only screen and (min-width: 1281px) {
+
+    .header-container, .main, .footer-container {
+        -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+        box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    }
+
+    .main-container {
+        width: 100%;
+    }
+
+    .wrapper{
+        width: 90%;
+        min-width: 960px;
+        margin: 0 auto;
+    }
+
+    .main.wrapper {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    article.tweet-container {
+        width: 50%;
+    }
+
+    article.tweet-container:nth-child(odd) {
+        float: left;
+    }
+
+    article.tweet-container:nth-child(even) {
+        float: right;
+    }
+
+    article.tweet-container:nth-child(2) {
+        margin-top: 80px;
+    }
+}
 /* ===============
     ALL: IE Fixes
    =============== */
@@ -5,14 +102,14 @@
     padding-top: 20px;
 }
 /* ==========================================================================
-   Author's custom styles
+   defaul style
    ========================================================================== */
-:focus{
-    outline: 0;
-}
 body{
     background: #aaaaaa;
 }
+/* ==========================================================================
+   Header
+   ========================================================================== */
 .header-container, .footer-container{
     width: inherit;
     background: #aaaaaa;
@@ -23,31 +120,16 @@ body{
     height: 70px;
     border-bottom: 1px #ffffff solid;
 }
-
 .authorization-container a, .poisk-container{
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
-
-.footer-container{
-   height: 127px;
-    border-top: 1px #ffffff solid;
-}
-.main-container{
-    width: inherit;
-}
-.main{
-    height: 1000px;
-    background: #ffffff;
-    position: relative;
-    z-index: 1;
-}
 .authorization-container{
-    height: 44px;
-    float: left;
-    margin-top: 20px;
-}
+       height: 44px;
+       float: left;
+       margin-top: 20px;
+   }
 .authorization-container a{
     display: block;
     float: left;
@@ -88,7 +170,6 @@ a.login{
     padding: 0;
     float: left;
 }
-
 .poisk-container input[type='button']{
     display: block;
     background: url("../img/lupa.gif") no-repeat center;
@@ -97,11 +178,21 @@ a.login{
     float: right;
     margin:10px  10px 0;
 }
-
-/* =========================================================================
-   Main container
-   ========================================================================= */
-
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer-container{
+   height: 127px;
+    border-top: 1px #ffffff solid;
+}
+.copyright p{
+    font-size: 12px;
+    line-height: 18px;
+    color: #444444;
+}
+/* ==========================================================================
+   ScrollTop
+   ========================================================================== */
 .scrollTop{
     display: none;
     width: 70px;
@@ -141,268 +232,45 @@ a.login{
 .scrollTop a:hover{
     background-color: #ccd0e5;
 }
-
+/* ==========================================================================
+   Main content
+   ========================================================================== */
+.main-container{
+    width: inherit;
+}
+.main{
+    height: 1000px;
+    background: #ffffff;
+    position: relative;
+    z-index: 1;
+}
 h1.title {
     color: #333;
     font-size: 48px;
     line-height: 72px;
     text-align: center;
 }
-
 h1.title .inactive {
     color: #ccc;
 }
-
 article.tweet-container {
     min-width: 460px;
     max-width: 940px;
     margin-bottom: 20px;
 }
-
 .avatar-container {
     margin-right: 20px;
     width: 170px;
 }
-
 .tweet {
     max-width: 750px;
 }
-
 .username,
 .datetime {
     display: inline-block;
 }
-
 .tweet-data-block {
     color: #909;
     font-size: 18px;
     line-height: 27px;
-}
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-@media only screen and (max-width: 480px) {
-    .wrapper {
-        width: 100%;
-    }
-}
-
-@media only screen and (min-width: 480px) and (max-width: 720px) {
-
-    .wrapper {
-        width: 100%;
-    }
-
-    .main article {
-        width: 100%;
-        padding: 0 10px;
-    }
-}
-
-@media only screen and (min-width: 721px) and (max-width: 1280px) {
-
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
-
-    .header-container, .main, .footer-container {
-        -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
-           -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
-                box-shadow: 0 0 16px rgba(0,0,0,0.75);
-    }
-
-/* ============
-    WIDE: Main
-   ============ */
-
-    .main.wrapper {
-        margin: 0 auto;
-        max-width: 960px;
-        width: 90%;
-    }
-
-    .main article {
-        width: 100%;
-        padding: 0 60px;
-    }
-
-}
-
-@media only screen and (min-width: 1281px) {
-
-/* ===============
-    Maximal Width
-   =============== */
-
-    .header-container, .main, .footer-container {
-        -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
-        box-shadow: 0 0 16px rgba(0,0,0,0.75);
-    }
-
-    .main-container {
-        width: 100%;
-    }
-
-    .main.wrapper {
-        width: 90%;
-        margin: 0 auto;
-        padding: 0 10px;
-    }
-
-    article.tweet-container {
-        width: 50%;
-    }
-
-    article.tweet-container:nth-child(odd) {
-        float: left;
-    }
-
-    article.tweet-container:nth-child(even) {
-        float: right;
-    }
-
-    article.tweet-container:nth-child(2) {
-        margin-top: 80px;
-    }
-}
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    *text-indent: -9999px;
-}
-
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%;
-}
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
-
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
-
-@media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
-.copyright p{
-    font-size: 12px;
-    line-height: 18px;
-    color: #444444;
 }
