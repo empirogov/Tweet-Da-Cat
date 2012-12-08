@@ -110,6 +110,10 @@ screen 1281px
 /* ==========================================================================
    defaul style
    ========================================================================== */
+.hidden {
+    display: none;
+}
+
 body{
     background: #aaaaaa;
 }
@@ -259,10 +263,10 @@ a.login:hover{
 }
 .scrollTop>div{
     background: #ffffff;
-    height: 130px;
+    height: 140px;
     width: 20px;
     float: left;
-    margin: -5px 0 0 -20px;
+    margin: -10px 0 0 -20px;
 }
 .scrollTop a{
     display: block;
