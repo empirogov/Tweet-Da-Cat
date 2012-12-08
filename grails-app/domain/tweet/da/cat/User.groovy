@@ -23,7 +23,7 @@ class User {
         nickname(unique: true, blank: false, nullable: false, size: 3..15)
         name(size: 3..20, nullable: true)
         password(size: 5..15, nullable: false)
-        avatar(nullable: true)
+        avatar(nullable: true, maxSize: 1024)
     }
 
     static hasMany = [following: User, posts: Post]

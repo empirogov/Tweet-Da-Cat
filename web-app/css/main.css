@@ -117,6 +117,12 @@ body{
 .body-wrapper {
     overflow: hidden;
 }
+a{
+    transition: color 1s linear;
+    -webkit-transition: color 1s linear;
+    -moz-transition: color 1s linear;
+    -o-transition: color 1s linear;
+}
 a:hover, a:active{
     color: #C60;
 }
@@ -153,6 +159,10 @@ a:hover, a:active{
     background-color: #ffffff;
     margin-left: 10px;
     color: #666666;
+    transition:background-image 1s linear;
+    -webkit-transition:background-image 1s linear;
+    -moz-transition:background-image 1s linear;
+    -o-transition:background-image 1s linear;
 }
 .authorization-container a:hover{
     color: #C60;
@@ -203,6 +213,10 @@ a.login:hover{
     float: right;
     margin:5px  10px 0;
     padding: 0;
+    transition: background 1s linear;
+    -webkit-transition: background 1s linear;
+    -moz-transition: background 1s linear;
+    -o-transition: background 1s linear;
 }
 .poisk-container input:focus{
     color: #C60;
@@ -214,7 +228,7 @@ a.login:hover{
    Footer
    ========================================================================== */
 .footer-container{
-   height: 127px;
+   height: 115px;
     border-top: 1px #ffffff solid;
 }
 .copyright{
@@ -263,6 +277,10 @@ a.login:hover{
     text-align: center;
     text-decoration: none;
     line-height: 40px;
+    transition:background 1s linear;
+    -webkit-transition:background 1s linear;
+    -moz-transition:background 1s linear;
+    -o-transition:background 1s linear;
 }
 .scrollTop a:hover{
     color: #cc6600;
