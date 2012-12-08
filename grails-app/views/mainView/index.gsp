@@ -1,10 +1,10 @@
 <g:applyLayout name="main">
-    <ul>
-    <g:each in="${posts}" var="post">
-        <li>
-            <b>${post.author.nickname}</b>
-            ${post.content}
-        </li>
-    </g:each>
-    </ul>
+    <header>
+        <h1 class="title"><span>All Da Catz</span> / <span class="inactive">Just Ma Cat</span></h1>
+    </header>
+    <div class="scrollTop">
+        <div></div>
+        <a href="#">Наверх</a>
+    </div>
+    <g:render template="/post/post_list" model="[posts: posts]" />
 </g:applyLayout>
