@@ -4,11 +4,7 @@ $(document).ready(function(){
 
     initScrollTop();
 
-
     initHiddenForms();
-
-    noBorderHover();
-
 });
 
 initScrollTop = function () {
@@ -31,7 +27,6 @@ initScrollTop = function () {
     });
 };
 
-
 initHiddenForms = function () {
     $(document).on('click', 'div.authorization-container a', function () {
         var victimSelector = $(this).attr('href'),
@@ -52,8 +47,3 @@ initHiddenForms = function () {
     });
 };
 
-noBorderHover = function(){
-    $('a').focus(function(){
-        $(this).blur();
-    });
-};
