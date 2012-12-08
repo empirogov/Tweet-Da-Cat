@@ -23,6 +23,13 @@ body{
     height: 70px;
     border-bottom: 1px #ffffff solid;
 }
+
+.authorization-container a, .poisk-container{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
 .footer-container{
    height: 127px;
     border-top: 1px #ffffff solid;
@@ -90,6 +97,11 @@ a.login{
     float: right;
     margin:10px  10px 0;
 }
+
+/* =========================================================================
+   Main container
+   ========================================================================= */
+
 .scrollTop{
     display: none;
     width: 70px;
@@ -131,32 +143,15 @@ a.login{
     background-color: #ccd0e5;
 }
 
-/* =========================================================================
-   Main container
-   ========================================================================= */
-
-
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
-}
-
-.clear {
-    clear: both;
-}
-
 h1.title {
-    color: #ccc;
+    color: #333;
     font-size: 48px;
     line-height: 72px;
     text-align: center;
 }
 
-h1.title .active {
-    color: #333;
+h1.title .inactive {
+    color: #ccc;
 }
 
 article.tweet-container {
@@ -189,40 +184,12 @@ article.tweet-container {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
-
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
-
-    nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 0;
-    }
-
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
-
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
-
-    nav ul li {
-        display: inline;
-    }
-
-    .oldie nav a {
-        margin: 0 0.7%;
+@media only screen and (max-width: 480px) {
+    .wrapper {
+        width: 100%;
     }
 }
+
 @media only screen and (min-width: 480px) and (max-width: 720px) {
 
     .wrapper {
@@ -234,7 +201,8 @@ article.tweet-container {
         padding: 0 10px;
     }
 }
-@media only screen and (min-width: 720px) and (max-width: 1280px) {
+
+@media only screen and (min-width: 721px) and (max-width: 1280px) {
 
 /* ====================
     WIDE: CSS3 Effects
@@ -245,19 +213,16 @@ article.tweet-container {
            -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
                 box-shadow: 0 0 16px rgba(0,0,0,0.75);
     }
-    .authorization-container a, .poisk-container{
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-    }
-
-/* ============
-    WIDE: Menu
-   ============ */
 
 /* ============
     WIDE: Main
    ============ */
+
+    .main.wrapper {
+        margin: 0 auto;
+        max-width: 960px;
+        width: 90%;
+    }
 
     .main article {
         width: 100%;
@@ -266,33 +231,43 @@ article.tweet-container {
 
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1281px) {
 
 /* ===============
     Maximal Width
    =============== */
+
+    .header-container, .main, .footer-container {
+        -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+        box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    }
+
     .main-container {
         width: 100%;
     }
-    .wrapper {
-        width: 960px; /* 1140px - 10% for margins */
+
+    .main.wrapper {
+        width: 90%;
         margin: 0 auto;
         padding: 0 10px;
     }
 
     article.tweet-container {
-        width: 940px;
-        padding: 0 10px;
-    }
-
-    article.tweet-container:nth-child(even) {
-        float: left;
+        width: 50%;
     }
 
     article.tweet-container:nth-child(odd) {
+        float: left;
+    }
+
+    article.tweet-container:nth-child(even) {
         float: right;
     }
 
+    article.tweet-container:nth-child(2) {
+        margin-top: 80px;
+    }
 }
 
 /* ==========================================================================
