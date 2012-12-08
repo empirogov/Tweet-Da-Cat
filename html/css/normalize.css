@@ -81,7 +81,7 @@ button,
 input,
 select,
 textarea {
-    font-family: sans-serif;
+    font-family: Tahoma;
 }
 
 /*
@@ -517,4 +517,23 @@ table {
 
 .clear {
     clear: both;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+:focus{
+    outline: 0;
 }
