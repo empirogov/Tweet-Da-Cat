@@ -1,11 +1,24 @@
 $(document).ready(function(){
 
     $('input').initPlaceholders();
+    initResizeEvents();
 
     initScrollTop();
 
     initHiddenForms();
 });
+
+initResizeEvents = function () {
+    $(window).on('resize', function () {
+        $('.popup-wrapper').each(function () {
+            var tH = $(this).height(),
+                wH = $(window).height();
+            if (wH > tH) {
+                $(this).css('margin-top', parseInt((wH - tH)/3) + 'px');
+            };
+        });
+    });
+};
 
 initScrollTop = function () {
 
@@ -57,6 +70,13 @@ initHiddenForms = function () {
                     .on('click', function (e) {
                         sendAuthRequest(e.currentTarget);
                     });
+                $('.popup-wrapper').each(function () {
+                    var tH = $(this).height(),
+                        wH = $(window).height();
+                    if (wH > tH) {
+                        $(this).css('margin-top', parseInt((wH - tH)/3) + 'px');
+                    };
+                });
             };
             $('body').addClass('fixed');
         };
