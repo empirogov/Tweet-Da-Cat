@@ -82,9 +82,65 @@ a.login{
     border: 0;
     padding: 0;
 }
+
 .poisk-container input[type='button']{
     display: block;
 }
+
+/* =========================================================================
+   Main container
+   ========================================================================= */
+
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+h1.title {
+    color: #ccc;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+}
+
+h1.title .active {
+    color: #333;
+}
+
+article.tweet-container {
+    min-width: 460px;
+    max-width: 940px;
+    margin-bottom: 20px;
+}
+
+.avatar-container {
+    margin-right: 20px;
+    width: 170px;
+}
+
+.tweet {
+    max-width: 750px;
+}
+
+.username,
+.datetime {
+    display: inline-block;
+}
+
+.tweet-data-block {
+    color: #909;
+    font-size: 18px;
+    line-height: 27px;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -123,8 +179,18 @@ a.login{
         margin: 0 0.7%;
     }
 }
+@media only screen and (min-width: 480px) and (max-width: 720px) {
 
-@media only screen and (min-width: 768px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .main article {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+@media only screen and (min-width: 720px) and (max-width: 1280px) {
 
 /* ====================
     WIDE: CSS3 Effects
@@ -137,48 +203,52 @@ a.login{
     }
     .authorization-container a, .poisk-container{
         -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        border-radius: 8px;
+           -moz-border-radius: 8px;
+                border-radius: 8px;
     }
 
 /* ============
     WIDE: Menu
    ============ */
 
-    .title {
-        float: left;
-    }
-
-    nav {
-        float: right;
-        width: 38%;
-    }
-
 /* ============
     WIDE: Main
    ============ */
 
     .main article {
-        float: left;
-        width: 57%;
+        width: 100%;
+        padding: 0 60px;
     }
 
-    .main aside {
-        float: right;
-        width: 28%;
-    }
 }
 
-@media only screen and (min-width: 1140px) {
+@media only screen and (min-width: 1280px) {
 
 /* ===============
     Maximal Width
    =============== */
-
-    .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
+    .main-container {
+        width: 100%;
     }
+    .wrapper {
+        width: inherit;
+        margin: 0 10px;
+        padding: 0 10px;
+    }
+
+    article.tweet-container {
+        width: 940px;
+        padding: 0 10px;
+    }
+
+    article.tweet-container:nth-child(even) {
+        float: left;
+    }
+
+    article.tweet-container:nth-child(odd) {
+        float: right;
+    }
+
 }
 
 /* ==========================================================================
