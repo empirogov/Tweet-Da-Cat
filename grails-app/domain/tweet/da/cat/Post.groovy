@@ -13,12 +13,18 @@ class Post {
 
     static namedQueries = {
         authorLike { nickname ->
-            like 'author.nickname', nickname + '%'
+            author {
+                like 'nickname', "${nickname}%"
+            }
         }
 
         authorInFollowings { currentUser ->
              'in'('author', currentUser.following)
         }
+    }
+
+    static mapping = {
+        author lazy: false
     }
 
     static belongsTo = [author: User]

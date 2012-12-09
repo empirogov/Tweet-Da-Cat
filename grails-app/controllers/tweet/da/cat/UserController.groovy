@@ -5,13 +5,14 @@ import org.springframework.web.multipart.MultipartHttpServletRequest
 class UserController {
 
     def fileUploadService
+    def authService
 
     def index = {
         [users: User.all]
     }
 
     def show = {
-        def user = User.get(params.id)
+        def user = authService.user
         if (user) {
             [user: user]
         } else {

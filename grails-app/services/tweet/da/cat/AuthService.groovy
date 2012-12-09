@@ -22,6 +22,8 @@ class AuthService {
     }
 
     def getUser() {
+//        return User.last();
+
         if (getSession().userId) {
             return User.findById(getSession().userId);
         }

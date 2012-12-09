@@ -22,7 +22,7 @@ environments {
             dbCreate = "update"
             username = "tweet_da_cat"
             password = "agent007"
-            dialect = org.hibernate.dialect.MySQL5Dialect
+            dialect = org.hibernate.dialect.MySQL5InnoDBDialect
         }
     }
     test {
@@ -34,6 +34,7 @@ environments {
             username = "root"
             password = "frjkas"
             dialect = org.hibernate.dialect.MySQL5Dialect
+            logSql = true
         }
     }
     production {

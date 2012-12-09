@@ -26,8 +26,15 @@ class User {
         avatar(nullable: true, maxSize: 1024)
     }
 
+    static mapping = {
+        following lazy: false
+    }
+
     static hasMany = [following: User, posts: Post]
 
-
+    @Override
+    String toString() {
+        nickname
+    }
 
 }
