@@ -6,25 +6,22 @@ class FeedsService {
     static final int MAX_POSTS = 100;
     static final String FILTER_VAR = "FEED_FILTER";
     static final String VIEW_VAR = "FEED_VIEW";
-    static final int ALL_VIEW_TYPE = 0;
-    static final int FOLLOWING_VIEW_TYPE = 1;
+    static final String ALL_VIEW_TYPE = "0";
+    static final String FOLLOWING_VIEW_TYPE = "1";
 
     def authService
 
     def getFeeds(params = null) {
         def posts = Post.createCriteria().list(max: MAX_POSTS, sort: 'dateCreated', order: 'desc') {
-            if (params?.nickname) {
-                author {
-                    like 'nickname', "${params.nickname}%"
+            def viewType = getViewType()
+            def ids = viewType.equals(FOLLOWING_VIEW_TYPE) ? authService.user.following*.id as ArrayList<Long> : null;
+            author {
+                if (ids && ids.size()) {
+                    'in'('id', ids.value)
                 }
-            }
-
-            if (getViewType() == FOLLOWING_VIEW_TYPE) {
-                def ids = authService.user.following*.id as List
-                author {
-                    'in'('id', ids)
+                if (params?.nickname) {
+                    like 'nickname', "${params?.nickname}%"
                 }
-
             }
         }
 
@@ -36,10 +33,15 @@ class FeedsService {
     }
 
     def getViewType() {
-        if (![ALL_VIEW_TYPE, FOLLOWING_VIEW_TYPE].contains(getSession().getValue(VIEW_VAR))) {
+        def value = getSession().getValue(VIEW_VAR)
+        if (![ALL_VIEW_TYPE, FOLLOWING_VIEW_TYPE].contains(value)) {
             return ALL_VIEW_TYPE;
         }
         return getSession().getValue(VIEW_VAR);
+    }
+
+    def setViewType(viewType) {
+        getSession().putValue(VIEW_VAR, viewType)
     }
 
     def getSession() {
