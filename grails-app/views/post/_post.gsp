@@ -7,7 +7,9 @@
         </div>
         <div class="tweet-content"><p>${post.content}</p></div>
 
-        <div class="follow right" data-target="/url/kuda/posylat/id-usera">Подписаться</div>
+        <g:if test="${post.author.couldFollowed(session.userId)}">
+            <div class="follow right" data-target="${createLink(controller: 'user', action: 'subscribe', id: post.author.id)}">Подписаться</div>
+        </g:if>
 
     </div>
     <div class="clear"></div>

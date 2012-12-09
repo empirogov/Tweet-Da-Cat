@@ -41,4 +41,14 @@ class User {
         return (!this.avatar) ? "/img/default_ava.png" : this.avatar
     }
 
+    boolean couldFollowed(id) {
+        if (id) {
+            User follower = User.get id
+            if (follower && (this.id != follower.id) && !follower.following.contains(this)) {
+                return true
+            }
+        }
+        return false
+    }
+
 }
