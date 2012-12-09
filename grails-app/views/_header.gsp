@@ -13,7 +13,7 @@
         <g:if test="${session.userId}">
             <div class="authorization-container">
                 <div class="clearfix">
-                    <a href="${createLink(action: 'show', controller: 'user')}" class="registration">Профиль</a>
+                    <a href="${createLink(action: 'profile', controller: 'user')}" class="registration">Профиль</a>
                     <a href="${createLink(action: 'logoff', controller: 'authorize')}" class="login">Выход</a>
                 </div>
             </div>
