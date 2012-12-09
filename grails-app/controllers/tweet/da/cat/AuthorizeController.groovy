@@ -16,10 +16,11 @@ class AuthorizeController {
     def logoff() {
         if (authService.isLogged()) {
             authService.removeUser()
-            render getResult("SUCCESS") as JSON
-            return
+//            render getResult("SUCCESS") as JSON
+//            return
         }
-        render getResult("ERROR") as JSON
+        redirect(controller: 'mainView', action: 'index')
+//        render getResult("ERROR") as JSON
     }
 
     def getResult(result) {
