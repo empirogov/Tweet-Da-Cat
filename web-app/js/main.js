@@ -74,7 +74,7 @@ initHiddenForms = function () {
                     .on('click', function (e) {
                         sendAJAXRequest(
                             e.currentTarget,
-                            getAllFormValues($(e.currentTarget).closest('.popup_mask')),
+                            getAllFormValues($(e.currentTarget).closest('.popup-mask')),
                             authFormCompletion
                         );
                     });
