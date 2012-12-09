@@ -17,11 +17,13 @@ class FeedsService {
             def ids = viewType.equals(FOLLOWING_VIEW_TYPE) ? authService.user.following*.id as ArrayList<Long> : null;
             author {
                 if (ids && ids.size()) {
+                    ids.add(authService.user.id)
                     'in'('id', ids.value)
                 }
                 if (params?.nickname) {
                     like 'nickname', "${params?.nickname}%"
                 }
+
             }
         }
 
