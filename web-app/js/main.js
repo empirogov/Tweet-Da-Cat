@@ -8,6 +8,7 @@ $(document).ready(function(){
 
     initHiddenForms();
 
+    initTweetForm();
     textareaHeight();
 });
 
@@ -71,7 +72,11 @@ initHiddenForms = function () {
                     })
                     .find('.submit')
                     .on('click', function (e) {
-                        sendAuthRequest(e.currentTarget);
+                        sendAJAXRequest(
+                            e.currentTarget,
+                            getAllFormValues($elt.closest('.popup_mask')),
+                            authFormCompletion
+                        );
                     });
                 $('.popup-wrapper').each(function () {
                     var tH = $(this).height(),
@@ -86,6 +91,54 @@ initHiddenForms = function () {
         return false;
     });
 };
+
+getAllFormValues = function ($form) {
+    var dataToSend = {};
+    $form.find('input')
+        .each(function () {
+            dataToSend[$(this).attr('name')] = $(this).val();
+        });
+    return dataToSend;
+};
+
+initTweetForm = function () {
+    $('.message .submit').on('click', function (e) {
+        sendAJAXRequest(
+            e.currentTarget,
+            getAllFormValues($(e.currentTarget).closest('.message')),
+            function () {
+                $(e.currentTarget).trigger('submit');
+            }
+        );
+    });
+};
+
+authFormCompletion = function (answer) {
+    if ($.parseJSON(answer.responseText).result == 'SUCCESS') {
+        window.location.href = getHomeUrl();
+    } else {
+        return false;
+    };
+};
+
+sendAJAXRequest = function (el, dataToSend, completion) {
+    var $elt = $(el),
+        target = $elt.data('target');
+    $.ajax({
+        url: target,
+        data: dataToSend,
+        timeout: 2000,
+        complete: completion,
+        error: function () {
+            alert('Конденсат в карбюраторе!');
+        }
+    });
+};
+
+getHomeUrl = function () {
+    return $('body').data('homeurl');
+};
+
 textareaHeight = function() {
     $('.message textarea').on('keyup', function (e) {
         var $el = $(this),
@@ -100,35 +153,6 @@ textareaHeight = function() {
             $el.css({height: elheight - 20});
         }
     });
-};
-sendAuthRequest = function (el) {
-    var $elt = $(el),
-        target = $elt.data('target'),
-        dataToSend = {};
-    $elt.closest('.popup-mask')
-        .find('input')
-        .each(function() {
-            dataToSend[$(this).attr('name')] = $(this).val();
-        });
-    $.ajax({
-        url: target,
-        data: dataToSend,
-        timeout: 2000,
-        complete: function (answer) {
-
-            if ($.parseJSON(answer.responseText).result == 'SUCCESS') {
-                window.location.href = getHomeUrl();
-            } else {
-                return false;
-            };
-        },
-        error: function () {
-            alert('Конденсат в карбюраторе!');
-        }
-    });
-};
-getHomeUrl = function () {
-    return $('body').data('homeurl');
 };
 
 initSearch = function() {
