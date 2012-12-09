@@ -7,7 +7,6 @@ class RegisterController {
     def authService
 
     def index() {
-        def p = params
         User u = new User(email: params.email, nickname: params.login, password: params.password)
         if (u.save()) {
             authService.setUser(u.id)
@@ -17,7 +16,7 @@ class RegisterController {
         render getResult("ERROR") as JSON
     }
 
-    def getResult(resultCode) {
-        return ['result': resultCode]
+    def getResult(result) {
+        return ["result": result]
     }
 }
