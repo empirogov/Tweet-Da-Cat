@@ -203,7 +203,7 @@ initAddFollower = function () {
         $.post(
             target,
             function(answer) {
-                if ($.parseJSON(answer.responseText).result == 'SUCCESS' == "SUCCESS") {
+                if (answer.result == 'SUCCESS') {
                     $(document).find('.follow[data-target="' + target + '"]').fadeOut();
                 } else {
                     alert('something was wrong')
