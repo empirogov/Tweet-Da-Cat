@@ -78,7 +78,8 @@ initHiddenForms = function () {
                         sendAJAXRequest(
                             e.currentTarget,
                             getAllFormValues($(e.currentTarget).closest('.popup-mask')),
-                            authFormCompletion
+                            authFormCompletion,
+                            authFormError
                         );
                     });
                 $('.popup-wrapper').each(function () {
@@ -139,7 +140,11 @@ authFormCompletion = function (answer) {
     };
 };
 
-sendAJAXRequest = function (el, dataToSend, completion) {
+authFormError = function (a) {
+
+};
+
+sendAJAXRequest = function (el, dataToSend, completion, error) {
     var $elt = $(el),
         target = $elt.data('target');
     $.ajax({
@@ -147,9 +152,7 @@ sendAJAXRequest = function (el, dataToSend, completion) {
         data: dataToSend,
         timeout: 2000,
         complete: completion,
-        error: function () {
-            alert('Конденсат в карбюраторе!');
-        }
+        error: error
     });
 };
 
