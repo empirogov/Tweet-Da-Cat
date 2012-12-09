@@ -2,11 +2,13 @@ package tweet.da.cat
 
 class MainViewController {
 
+    def feedsService
+
     def index() {
         [posts: getPosts()]
     }
 
     def getPosts() {
-        return Post.findAll(max: 100)
+        feedsService.getFeeds()
     }
 }

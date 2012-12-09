@@ -11,23 +11,21 @@ class FeedsService {
 
     def authService
 
-    def getFeeds(params) {
+    def getFeeds(params = null) {
         def posts = Post.createCriteria().list(max: MAX_POSTS, sort: 'dateCreated', order: 'desc') {
             def viewType = getViewType()
-//            if (params.nickname) {
-//                author {
-//                    like 'nickname', "${params.nickname}%"
-//                    if (viewType.equals(FOLLOWING_VIEW_TYPE)) {
-//                        def ids = authService.user.following*.id as List
-//                        'in'('id', ids)
-//                    }
-//                }
-//            } else
+            if (params?.nickname) {
+                author {
+                    like 'nickname', "${params.nickname}%"
+                }
+            }
+
             if (viewType.equals(FOLLOWING_VIEW_TYPE)) {
+
                 def ids = authService.user.following*.id as List
-                    author {
-                        'in'('id', ids)
-                    }
+                author {
+                    'in'('id', ids)
+                }
 
             }
         }
