@@ -110,15 +110,44 @@ screen 1281px
 /* ==========================================================================
    defaul style
    ========================================================================== */
+.hidden {
+    display: none;
+}
+
 body{
     background: #aaaaaa;
+}
+
+body.fixed {
+    overflow: hidden;
 }
 
 .body-wrapper {
     overflow: hidden;
 }
+a{
+    transition: color 1s linear;
+    -webkit-transition: color 1s linear;
+    -moz-transition: color 1s linear;
+    -o-transition: color 1s linear;
+}
 a:hover, a:active{
     color: #C60;
+}
+
+/* ==========================================================================
+   Popup
+   ========================================================================== */
+.popup-mask {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
 }
 /* ==========================================================================
    Header
@@ -153,6 +182,10 @@ a:hover, a:active{
     background-color: #ffffff;
     margin-left: 10px;
     color: #666666;
+    transition:background-image 1s linear;
+    -webkit-transition:background-image 1s linear;
+    -moz-transition:background-image 1s linear;
+    -o-transition:background-image 1s linear;
 }
 .authorization-container a:hover{
     color: #C60;
@@ -203,6 +236,10 @@ a.login:hover{
     float: right;
     margin:5px  10px 0;
     padding: 0;
+    transition: background 1s linear;
+    -webkit-transition: background 1s linear;
+    -moz-transition: background 1s linear;
+    -o-transition: background 1s linear;
 }
 .poisk-container input:focus{
     color: #C60;
@@ -210,11 +247,55 @@ a.login:hover{
 .poisk-container input[type='button']:hover{
     background: url("../img/lupa_hv.png") no-repeat center;
 }
+.message{
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+}
+.message textarea{
+    display: block;
+    float: left;
+    width: 800px;
+    max-width: 800px;
+    min-height: 46px;
+    padding: 10px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #666666;
+    border: 0;
+    margin-left: 10px;
+    overflow: hidden;
+}
+.message input[type="button"]{
+    display: block;
+    float: right;
+    height: 66px;
+    padding-bottom: 20px;
+    width: 100px;
+    background:url(../img/down.png) no-repeat center 37px #ffffff;
+    margin-right: 10px;
+    color: #333333;
+    font-size: 16px;
+    transition: background 1s linear, color 1s linear;
+    -webkit-transition:background 1s linear, color 1s linear;
+    -moz-transition:background 1s linear, color 1s linear;
+    -o-transition:background 1s linear, color 1s linear;
+}
+.message input[type="button"]:hover{
+    background: url(../img/down_hv.png) no-repeat center 37px #ffffff;
+    color: #C60;
+}
+.message textarea, .message input[type="button"]{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
 /* ==========================================================================
    Footer
    ========================================================================== */
 .footer-container{
-   height: 127px;
+   height: 115px;
     border-top: 1px #ffffff solid;
 }
 .copyright{
@@ -245,10 +326,10 @@ a.login:hover{
 }
 .scrollTop>div{
     background: #ffffff;
-    height: 130px;
+    height: 140px;
     width: 20px;
     float: left;
-    margin: -5px 0 0 -20px;
+    margin: -10px 0 0 -20px;
 }
 .scrollTop a{
     display: block;
@@ -263,6 +344,10 @@ a.login:hover{
     text-align: center;
     text-decoration: none;
     line-height: 40px;
+    transition:background 1s linear;
+    -webkit-transition:background 1s linear;
+    -moz-transition:background 1s linear;
+    -o-transition:background 1s linear;
 }
 .scrollTop a:hover{
     color: #cc6600;
@@ -308,4 +393,126 @@ article.tweet-container {
     color: #909;
     font-size: 18px;
     line-height: 27px;
+}
+
+.paginator {
+    margin: 20px auto 30px;
+    height: 30px;
+    width: 50%;
+}
+
+.sprite-arrow {
+    background-image: url("../img/arrows-sprite.png");
+    background-repeat: no-repeat;
+}
+
+a.sprite-arrow {
+    display: block;
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 10px;
+    vertical-align: middle;
+    transition:background 1s linear;
+    -webkit-transition:background 1s linear;
+    -moz-transition:background 1s linear;
+    -o-transition:background 1s linear;
+    cursor: pointer;
+}
+
+a.previous {
+    padding-left: 36px;
+    background-position: 0 -90px;
+}
+
+a.previous:hover {
+    background-position: 0 -120px;
+}
+
+a.next {
+    padding-right: 36px;
+    background-position: right 0;
+    text-align: right;
+}
+
+a.next:hover {
+    background-position: right -30px;
+}
+/*  ========================================================================
+    Registration & Authorization forms
+    ======================================================================== */
+
+.popup-wrapper {
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    width: 440px;
+}
+
+h1.popup-title {
+    text-align: center;
+}
+
+.field-box {
+    margin-bottom: 10px;
+}
+.field-help {
+    color: #333;
+    float: left;
+    height: 30px;
+    margin-right: 20px;
+    text-align: right;
+    width: 90px;
+}
+
+input {
+    border: none;
+    color: #666;
+    float: left;
+    width: 330px;
+}
+.error {
+    color: #c00;
+    display: none;
+}
+
+.submit {
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    position: absolute;
+    bottom: -30px;
+    left: 175px;
+    width: 130px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    color: #c60;
+}
+
+.submit:after {
+    content: ' ';
+    background-color: #fff;
+    display: block;
+    width: 170px;
+    height: 20px;
+    position: absolute;
+    top: -10px;
+    left: -20px;
 }

@@ -1,7 +1,24 @@
-(function ($, window, undefined) {
-    $.fn.showModal = function () {
-        return this.each(function () {
+/**
+ * */
 
-        });
+(function ($, window, document, undefined) {
+    $.fn.showModal = function () {
+
+        return this;
+
+//        $(window).on('click', function (e) {
+//            alert(e);
+//            return false;
+//        });
+
+//        return this.each(function () {
+//            var $el = $(this);
+//            $el
+//
+//            if (!$el.is('a[href]')) {
+//                return true;
+//            };
+//            $(this).on('click')
+//        });
     };
-})(jQuery, this);
+})(jQuery, this, document);
