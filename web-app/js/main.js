@@ -202,8 +202,8 @@ initAddFollower = function () {
         var target = $(this).data('target');
         $.post(
             target,
-            function(data) {
-                if (data == "SUCCESS") {
+            function(answer) {
+                if ($.parseJSON(answer.responseText).result == 'SUCCESS' == "SUCCESS") {
                     $(document).find('.follow[data-target="' + target + '"]').fadeOut();
                 } else {
                     alert('something was wrong')
