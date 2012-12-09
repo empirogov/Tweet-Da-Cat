@@ -28,7 +28,8 @@ class UserController {
                 user.avatar = fileUploadService.uploadFile(avatarFile, "${user.nickname}.${getExt(avatarFile)}", 'upload/avatars')
             }
             user.save();
-            redirect(action: 'show', id: user.id)
+            flash.message = " Пользователь успешно обновлен"
+            render(view: 'profile', model: [user: user])
         }
     }
 
