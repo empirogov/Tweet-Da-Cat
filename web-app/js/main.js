@@ -5,6 +5,8 @@ $(document).ready(function(){
     initScrollTop();
 
     initHiddenForms();
+
+    textareaHeight();
 });
 
 initScrollTop = function () {
@@ -47,3 +49,18 @@ initHiddenForms = function () {
     });
 };
 
+textareaHeight = function() {
+    $('.message textarea').on('keyup', function (e) {
+        var $el = $(this),
+            elheight = $el.height(),
+            elscroll = this.scrollHeight;
+        if (elscroll > elheight) {
+            $el.css({height: elscroll - 20});
+        }
+        elheight = $el.height();
+            elscroll = this.scrollHeight;
+        if(e.keyCode == 8){
+            $el.css({height: elheight - 20});
+        }
+    });
+};

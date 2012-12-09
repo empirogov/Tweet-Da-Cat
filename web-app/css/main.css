@@ -228,6 +228,50 @@ a.login:hover{
 .poisk-container input[type='button']:hover{
     background: url("../img/lupa_hv.png") no-repeat center;
 }
+.message{
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+}
+.message textarea{
+    display: block;
+    float: left;
+    width: 800px;
+    max-width: 800px;
+    min-height: 46px;
+    padding: 10px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #666666;
+    border: 0;
+    margin-left: 10px;
+    overflow: hidden;
+}
+.message input[type="button"]{
+    display: block;
+    float: right;
+    height: 66px;
+    padding-bottom: 20px;
+    width: 100px;
+    background:url(../img/down.png) no-repeat center 37px #ffffff;
+    margin-right: 10px;
+    color: #333333;
+    font-size: 16px;
+    transition: background 1s linear, color 1s linear;
+    -webkit-transition:background 1s linear, color 1s linear;
+    -moz-transition:background 1s linear, color 1s linear;
+    -o-transition:background 1s linear, color 1s linear;
+}
+.message input[type="button"]:hover{
+    background: url(../img/down_hv.png) no-repeat center 37px #ffffff;
+    color: #C60;
+}
+.message textarea, .message input[type="button"]{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
 /* ==========================================================================
    Footer
    ========================================================================== */
