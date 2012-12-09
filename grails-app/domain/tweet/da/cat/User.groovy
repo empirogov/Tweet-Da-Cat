@@ -1,5 +1,7 @@
 package tweet.da.cat
 
+import org.codehaus.groovy.grails.web.context.ServletContextHolder
+
 class User {
 
     String avatar
@@ -38,7 +40,7 @@ class User {
     }
 
     String getUserAvatar() {
-        return (!this.avatar) ? "/img/default_ava.png" : this.avatar
+        return (!this.avatar) ? (ServletContextHolder.servletContext.getContextPath() + "/img/default_ava.png") : this.avatar
     }
 
     boolean couldFollowed(id) {

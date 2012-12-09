@@ -25,7 +25,7 @@ class UserController {
         if (user) {
             def avatarFile = request.getFile('avatar')
             if (!avatarFile.isEmpty()) {
-                user.avatar = fileUploadService.uploadFile(avatarFile, "${user.nickname}-${avatarFile.fileItem.fileName}", 'upload/avatars')
+                user.avatar = fileUploadService.uploadFile(avatarFile, "${user.nickname}.${getExt(avatarFile)}", 'upload/avatars')
             }
             user.save();
             redirect(action: 'show', id: user.id)
@@ -61,6 +61,22 @@ class UserController {
             }
         }
         render getResult("ERROR") as JSON
+    }
+
+    String getExt(file) {
+        if(file.getContentType()=='image/jpeg'){
+            return "jpeg"
+        }
+        if(file.getContentType()=='image/gif'){
+            return "gif"
+        }
+        if(file.getContentType()=='image/png'){
+            return "png"
+        }
+        if(file.getContentType()=='image/bmp'){
+            return "bmp"
+        }
+        return "unknown"
     }
 
 }
