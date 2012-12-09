@@ -6,6 +6,9 @@
             <div class="datetime">(${post.dateCreated}):</div>
         </div>
         <div class="tweet-content"><p>${post.content}</p></div>
+
+        <div class="follow right" data-target="/url/kuda/posylat/id-usera">Подписаться</div>
+
     </div>
     <div class="clear"></div>
 </article>

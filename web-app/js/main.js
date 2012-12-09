@@ -10,6 +10,8 @@ $(document).ready(function(){
 
     initTweetForm();
     textareaHeight();
+
+    initAddFollower();
 });
 
 initResizeEvents = function () {
@@ -193,4 +195,20 @@ initSearch = function() {
             $('.tweet-wrapper').html(data);
         });
     })
-}
+};
+
+initAddFollower = function () {
+    $(document).on('click', '.follow', function () {
+        var target = $(this).data('target');
+        $.post(
+            target,
+            function(data) {
+                if (data == "SUCCESS") {
+                    $(document).find('.follow[data-target="' + target + '"]').fadeOut();
+                } else {
+                    alert('something was wrong')
+                }
+            }
+        );
+    });
+};

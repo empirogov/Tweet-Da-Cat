@@ -1,7 +1,6 @@
 package tweet.da.cat
 
 import grails.converters.JSON
-import org.springframework.web.multipart.MultipartHttpServletRequest
 
 class UserController {
 
@@ -12,7 +11,7 @@ class UserController {
         [users: User.all]
     }
 
-    def show = {
+    def profile = {
         def user = authService.user
         if (user) {
             [user: user]
@@ -42,7 +41,7 @@ class UserController {
                 redirect(action: 'show', id: user.id)
             } else {
                 flash.message = " Пользователь успешно обновлен"
-                render(view: 'show', model: [user: user])
+                render(view: 'profile', model: [user: user])
             }
         } else {
             render status: 404
