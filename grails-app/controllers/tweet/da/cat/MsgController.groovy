@@ -4,8 +4,8 @@ class MsgController {
     def authService
 
     def addPost() {
-        if (params.hasProperty("tweet") && authService.isLogged()) {
-            if (authService.getUser().addToPosts(new Post(content: params.tweet))) {
+        if (authService.isLogged()) {
+            if (authService.getUser().addToPosts(new Post(content: params.get("tweet")))) {
                 render getResult("SUCCESS")
                 return
             }
