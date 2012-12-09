@@ -5,10 +5,11 @@ class MainViewController {
     def feedsService
 
     def index() {
-        [posts: getPosts()]
+        def posts = getPosts(params)
+        [posts: posts, postsCount: posts.size()]
     }
 
-    def getPosts() {
-        feedsService.getFeeds()
+    def getPosts(params) {
+        feedsService.getFeeds(params)
     }
 }

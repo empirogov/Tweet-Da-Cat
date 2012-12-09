@@ -19,5 +19,5 @@
         <div></div>
         <a href="#">Наверх</a>
     </div>
-    <g:render template="/post/post_list" model="[posts: posts]"/>
+    <g:render template="/post/post_list" model="[posts: posts, postsCount: postsCount]"/>
 </g:applyLayout>

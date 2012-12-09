@@ -3,7 +3,7 @@ package tweet.da.cat
 import org.springframework.web.context.request.RequestContextHolder
 
 class FeedsService {
-    static final int MAX_POSTS = 100;
+    static final int MAX_POSTS = 5;
     static final String FILTER_VAR = "FEED_FILTER";
     static final String VIEW_VAR = "FEED_VIEW";
     static final String ALL_VIEW_TYPE = "0";
@@ -12,7 +12,11 @@ class FeedsService {
     def authService
 
     def getFeeds(params = null) {
-        def posts = Post.createCriteria().list(max: MAX_POSTS, sort: 'dateCreated', order: 'desc') {
+        def posts = Post.createCriteria().list(
+                max: 5,
+                offset: params?.offset ?: 0,
+                sort: 'dateCreated',
+                order: 'desc') {
             def viewType = getViewType()
             def ids = viewType.equals(FOLLOWING_VIEW_TYPE) ? authService.user.following*.id as ArrayList<Long> : null;
             author {

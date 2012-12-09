@@ -5,6 +5,7 @@ $(document).ready(function(){
     initSearch();
 
     initScrollTop();
+    initPagination();
 
     initHiddenForms();
 
@@ -195,6 +196,15 @@ initSearch = function() {
             $('.tweet-wrapper').html(data);
         });
     })
+}
+
+initPagination = function() {
+    $('.paginator a').live('click', function() {
+        $.get($(this).attr('href'), {}, function(data) {
+            $('.tweet-wrapper').html(data);
+        });
+        return false;
+    });
 };
 
 initAddFollower = function () {
