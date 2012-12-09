@@ -55,7 +55,7 @@ initHiddenForms = function () {
         if ($victimSource.length) {
             var $existingVictim = $(victimSelector.replace('ion', 'ion-active'));
             if ($existingVictim.length) {
-                $existingVictim.fadeIn();
+                $existingVictim.fadeIn().find('.error').hide();
             } else {
                 $victimSource
                     .children()
@@ -78,17 +78,10 @@ initHiddenForms = function () {
                         sendAJAXRequest(
                             e.currentTarget,
                             getAllFormValues($(e.currentTarget).closest('.popup-mask')),
-                            authFormCompletion,
-                            authFormError
+                            authFormCompletion
                         );
                     });
-                $('.popup-wrapper').each(function () {
-                    var tH = $(this).height(),
-                        wH = $(window).height();
-                    if (wH > tH) {
-                        $(this).css('margin-top', parseInt((wH - tH)/3) + 'px');
-                    };
-                });
+                $(window).trigger('resize');
             };
             $('body').addClass('fixed');
         };
@@ -136,23 +129,18 @@ authFormCompletion = function (answer) {
     if ($.parseJSON(answer.responseText).result == 'SUCCESS') {
         window.location.href = getHomeUrl();
     } else {
-        return false;
+        $('.popup-wrapper').find('.error').fadeIn();
     };
 };
 
-authFormError = function (a) {
-
-};
-
-sendAJAXRequest = function (el, dataToSend, completion, error) {
+sendAJAXRequest = function (el, dataToSend, completion) {
     var $elt = $(el),
         target = $elt.data('target');
     $.ajax({
         url: target,
         data: dataToSend,
         timeout: 2000,
-        complete: completion,
-        error: error
+        complete: completion
     });
 };
 

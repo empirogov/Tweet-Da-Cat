@@ -11,7 +11,6 @@
 
                 <div class="clear"></div>
 
-                <div class="error">Пользователь с таким именем здесь уже есть</div>
             </div>
 
             <div class="field-box">
@@ -21,7 +20,6 @@
 
                 <div class="clear"></div>
 
-                <div class="error">Слишком сложно чтобы запомнить. Может попробовать что-нибудь попроще?</div>
             </div>
 
             <div class="field-box">
@@ -30,7 +28,7 @@
 
                 <div class="clear"></div>
 
-                <div class="error">С этим адресом что-то не то...</div>
+                <div class="error">Или что-то случилось, или одно из двух...</div>
             </div>
 
             <div class="submit"

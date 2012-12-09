@@ -11,7 +11,6 @@
 
                 <div class="clear"></div>
 
-                <div class="error">Имя пользователя не найдено. Потерялось наверное...</div>
             </div>
 
             <div class="field-box">
@@ -20,7 +19,7 @@
 
                 <div class="clear"></div>
 
-                <div class="error">Неверный пароль. Ещё раз?</div>
+                <div class="error">Или что-то случилось, или одно из двух...</div>
             </div>
 
             <div class="submit"
