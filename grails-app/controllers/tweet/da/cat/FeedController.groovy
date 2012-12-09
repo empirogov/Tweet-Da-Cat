@@ -10,7 +10,7 @@ class FeedController {
 
     def listFiltered() {
        def posts = feedsService.getFeeds(params)
-       render(view: 'list', model: [posts: posts])
+       render(view: '/post/_post_list', model: [posts: posts, postsCount: posts.size()])
     }
 
     def changeViewType() {
