@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     $('input').initPlaceholders();
     initResizeEvents();
+    initSearch();
 
     initScrollTop();
 
@@ -129,3 +130,28 @@ sendAuthRequest = function (el) {
 getHomeUrl = function () {
     return $('body').data('homeurl');
 };
+
+initSearch = function() {
+    $('#search-form').submit(function() { return false; });
+    $('#nickname-search').keyup(function() {
+        var $this = $(this),
+            actionUrl = $this.closest('form').attr('action'),
+            value = $this.val();
+
+        $.get(actionUrl, { nickname: value }, function(data) {
+            $('.tweet-wrapper').html(data);
+        });
+    });
+
+    $('.filter-feeds').click(function() {
+        var $this = $(this),
+            value = $this.data('value'),
+            url = $this.data('url');
+
+        $('.filter-feeds').addClass('inactive');
+        $this.removeClass('inactive');
+        $.get(url, { viewType: value }, function(data) {
+            $('.tweet-wrapper').html(data);
+        });
+    })
+}
