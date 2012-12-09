@@ -2,7 +2,7 @@
  * */
 
 (function ($, window, document, undefined) {
-    $.fn.showModal = function () {
+    $.fn.initModal = function () {
 
         return this;
 
