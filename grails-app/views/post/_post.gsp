@@ -1,5 +1,5 @@
 <article class="tweet-container">
-    <div class="avatar-container left"><img src="/upload/${post.author.avatar}" ></div>
+    <div class="avatar-container left"><img src="${resource(file: post.author.userAvatar)}" ></div>
     <div class="tweet">
         <div class="tweet-data-block">
             <div class="username">@${post.author.nickname}</div>
