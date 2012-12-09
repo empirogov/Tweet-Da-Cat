@@ -13,7 +13,7 @@
                             </header>
                             <div class="field-box">
                                 <div class="field-help">Логин:</div>
-                                <input type="text" name="login" placeholder="Отображаемое имя юзверя"/>
+                                <input type="text" name="login" placeholder="Хочу быть ..."/>
                                 <div class="clear"></div>
                                 <div class="error">Пользователь с таким именем здесь уже есть</div>
                             </div>
@@ -29,7 +29,7 @@
                                 <div class="clear"></div>
                                 <div class="error">С этим адресом что-то не то...</div>
                             </div>
-                            <div class="submit" data-target="/register">Хочу котика!</div>
+                            <div class="submit" data-target="${createLink(controller: 'register', action: 'index')}">Хочу котика!</div>
                         </div>
                     </div>
                 </div>
@@ -44,17 +44,17 @@
                             </header>
                             <div class="field-box">
                                 <div class="field-help">E-mail:</div>
-                                <input type="text" name="email" placeholder="Отображаемое имя юзверя"/>
+                                <input type="text" name="email" placeholder="Номер почтового ящика"/>
                                 <div class="clear"></div>
                                 <div class="error">Имя пользователя не найдено. Потерялось наверное...</div>
                             </div>
                             <div class="field-box">
                                 <div class="field-help">Пароль:</div>
-                                <input type="password" name="password" placeholder="Отображаемое имя юзверя"/>
+                                <input type="password" name="password" placeholder="Сигнатура ключа"/>
                                 <div class="clear"></div>
                                 <div class="error">Неверный пароль. Ещё раз?</div>
                             </div>
-                            <div class="submit" data-target="${createLink(controller: "authorize", action: 'login')}">Хочу котика!</div>
+                            <div class="submit" data-target="${createLink(controller: 'authorize', action: 'login')}">Хочу котика!</div>
                         </div>
                     </div>
                 </div>
