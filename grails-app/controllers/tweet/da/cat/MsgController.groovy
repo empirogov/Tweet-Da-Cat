@@ -1,16 +1,19 @@
 package tweet.da.cat
 
+import grails.converters.deep.JSON
+
 class MsgController {
     def authService
 
     def addPost() {
         if (authService.isLogged()) {
-            if (authService.getUser().addToPosts(new Post(content: params.get("tweet")))) {
-                render getResult("SUCCESS")
+            def user = authService.user;
+            if (user.addToPosts( new Post(content: params.content)) && user.save(flush: true)) {
+                render text: "SUCCESS"
                 return
             }
         }
-        render getResult("ERROR")
+        render text: "ERROR"
     }
 
     def getResult(resultCode) {

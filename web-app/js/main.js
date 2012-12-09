@@ -10,6 +10,8 @@ $(document).ready(function(){
 
     initTweetForm();
     textareaHeight();
+
+    initAddFollower();
 });
 
 initResizeEvents = function () {
@@ -74,7 +76,7 @@ initHiddenForms = function () {
                     .on('click', function (e) {
                         sendAJAXRequest(
                             e.currentTarget,
-                            getAllFormValues($elt.closest('.popup_mask')),
+                            getAllFormValues($(e.currentTarget).closest('.popup-mask')),
                             authFormCompletion
                         );
                     });
@@ -102,15 +104,30 @@ getAllFormValues = function ($form) {
 };
 
 initTweetForm = function () {
-    $('.message .submit').on('click', function (e) {
-        sendAJAXRequest(
-            e.currentTarget,
-            getAllFormValues($(e.currentTarget).closest('.message')),
-            function () {
-                $(e.currentTarget).trigger('submit');
+    $('#add-tweet-form').submit(function() {
+        $.post(
+            $(this).attr('action'),
+            $(this).serializeArray(),
+            function(data) {
+                if (data == "SUCCESS") {
+                    $('#nickname-search').keyup();
+                } else {
+                    alert('something was wrong')
+                }
             }
         );
+        return false;
     });
+
+//    $('.message .submit').on('click', function (e) {
+//        sendAJAXRequest(
+//            e.currentTarget,
+//            getAllFormValues($(e.currentTarget).closest('.message')),
+//            function () {
+//                $(e.currentTarget).trigger('submit');
+//            }
+//        );
+//    });
 };
 
 authFormCompletion = function (answer) {
@@ -178,4 +195,20 @@ initSearch = function() {
             $('.tweet-wrapper').html(data);
         });
     })
-}
+};
+
+initAddFollower = function () {
+    $(document).on('click', '.follow', function () {
+        var target = $(this).data('target');
+        $.post(
+            target,
+            function(data) {
+                if (data == "SUCCESS") {
+                    $(document).find('.follow[data-target="' + target + '"]').fadeOut();
+                } else {
+                    alert('something was wrong')
+                }
+            }
+        );
+    });
+};

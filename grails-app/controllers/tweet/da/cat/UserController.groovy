@@ -1,6 +1,6 @@
 package tweet.da.cat
 
-import org.springframework.web.multipart.MultipartHttpServletRequest
+import grails.converters.JSON
 
 class UserController {
 
@@ -11,7 +11,7 @@ class UserController {
         [users: User.all]
     }
 
-    def show = {
+    def profile = {
         def user = authService.user
         if (user) {
             [user: user]
@@ -41,18 +41,26 @@ class UserController {
                 redirect(action: 'show', id: user.id)
             } else {
                 flash.message = " Пользователь успешно обновлен"
-                render(view: 'show', model: [user: user])
+                render(view: 'profile', model: [user: user])
             }
         } else {
             render status: 404
         }
     }
 
-    def getResult(status, data) {
-        [
-                status: status,
-                result: data
-        ]
+    def getResult(resultCode) {
+        return ['result': resultCode]
+    }
+
+    def subscribe = {
+        if (authService.user && params.get("id")) {
+            User toFollow = User.get params.id
+            if (toFollow && authService.user.addToFollowing(toFollow)) {
+                render getResult("SUCCESS") as JSON
+                return
+            }
+        }
+        render getResult("ERROR") as JSON
     }
 
 }

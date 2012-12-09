@@ -10,6 +10,14 @@
                 </div>
             </div>
         </g:if>
+        <g:if test="${session.userId}">
+            <div class="authorization-container">
+                <div class="clearfix">
+                    <a href="${createLink(action: 'profile', controller: 'user')}" class="registration">Профиль</a>
+                    <a href="${createLink(action: 'logoff', controller: 'authorize')}" class="login">Выход</a>
+                </div>
+            </div>
+        </g:if>
         <g:render template="/snippets/forms/filter" />
         <g:if test="${session.userId}">
             <g:render template="/snippets/forms/tweet" />
