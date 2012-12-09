@@ -11,9 +11,9 @@ class FeedsService {
 
     def authService
 
-    def getFeeds(params) {
+    def getFeeds(params = null) {
         def posts = Post.createCriteria().list(max: MAX_POSTS, sort: 'dateCreated', order: 'desc') {
-            if (params.nickname) {
+            if (params?.nickname) {
                 author {
                     like 'nickname', "${params.nickname}%"
                 }
