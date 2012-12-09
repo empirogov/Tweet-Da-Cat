@@ -1,5 +1,6 @@
 package tweet.da.cat
 
+import grails.converters.JSON
 import org.springframework.web.multipart.MultipartHttpServletRequest
 
 class UserController {
@@ -48,11 +49,19 @@ class UserController {
         }
     }
 
-    def getResult(status, data) {
-        [
-                status: status,
-                result: data
-        ]
+    def getResult(resultCode) {
+        return ['result': resultCode]
+    }
+
+    def subscribe = {
+        if (authService.user && params.get("id")) {
+            User toFollow = User.get params.id
+            if (toFollow && authService.user.addToFollowing(toFollow)) {
+                render getResult("SUCCESS") as JSON
+                return
+            }
+        }
+        render getResult("ERROR") as JSON
     }
 
 }
