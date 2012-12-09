@@ -102,15 +102,30 @@ getAllFormValues = function ($form) {
 };
 
 initTweetForm = function () {
-    $('.message .submit').on('click', function (e) {
-        sendAJAXRequest(
-            e.currentTarget,
-            getAllFormValues($(e.currentTarget).closest('.message')),
-            function () {
-                $(e.currentTarget).trigger('submit');
+    $('#add-tweet-form').submit(function() {
+        $.post(
+            $(this).attr('action'),
+            $(this).serializeArray(),
+            function(data) {
+                if (data == "SUCCESS") {
+                    $('#nickname-search').keyup();
+                } else {
+                    alert('something was wrong')
+                }
             }
         );
+        return false;
     });
+
+//    $('.message .submit').on('click', function (e) {
+//        sendAJAXRequest(
+//            e.currentTarget,
+//            getAllFormValues($(e.currentTarget).closest('.message')),
+//            function () {
+//                $(e.currentTarget).trigger('submit');
+//            }
+//        );
+//    });
 };
 
 authFormCompletion = function (answer) {
