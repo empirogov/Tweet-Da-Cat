@@ -24,7 +24,7 @@ screen 480-720px
     }
 
     .main article {
-        width: 100%;
+        /*width: 100%;*/
         padding: 0 10px;
     }
 
@@ -34,7 +34,9 @@ screen 721-1280px
 ========================================================================== */
 @media only screen and (min-width: 721px) and (max-width: 1440px) {
 
-    .header-container, .main, .footer-container {
+    .header-container,
+    .main,
+    .footer-container {
         -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
         -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
         box-shadow: 0 0 16px rgba(0,0,0,0.75);
@@ -46,14 +48,8 @@ screen 721-1280px
         margin: 0 auto;
     }
 
-    .main.wrapper {
-        margin: 0 auto;
-        max-width: 960px;
-        width: 90%;
-    }
-
     .main article {
-        width: 100%;
+        /*width: 100%;*/
         padding: 0 60px;
     }
 
@@ -63,7 +59,9 @@ screen 1281px
 ========================================================================== */
 @media only screen and (min-width: 1441px) {
 
-    .header-container, .main, .footer-container {
+    .header-container,
+    .main,
+    .footer-container {
         -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
         -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
         box-shadow: 0 0 16px rgba(0,0,0,0.75);
@@ -382,6 +380,11 @@ article.tweet-container {
     margin-right: 20px;
     width: 170px;
 }
+.avatar-container img {
+    display: block;
+    width: 170px;
+    height: 170px;
+}
 .tweet {
     max-width: 750px;
 }
@@ -541,3 +544,38 @@ input {
     color: #c60;
     background-position: 0 -24px;
 }
+
+article.my {
+    background-color: #eee;
+}
+
+/* Профиль вражеского кота */
+.user-profile {
+    -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    max-width: 980px;
+    margin: 16px;
+    padding: 30px;
+    position: relative;
+}
+
+.user-profile>.avatar-container {
+    width: 50%;
+}
+
+.user-profile>.avatar-container>img {
+    width: 100%;
+}
+
+.user-profile>.submit {
+    top: -30px;
+    left: auto;
+    right: 0;
+}
+
+.user-profile>.submit:after {
+    width: 150px;
+    top: 30px;
+}
+

@@ -11,6 +11,8 @@ $(document).ready(function(){
 
     initTweetForm();
     textareaHeight();
+
+    initAddFollower();
 });
 
 initResizeEvents = function () {
@@ -203,4 +205,20 @@ initPagination = function() {
         });
         return false;
     });
-}
+};
+
+initAddFollower = function () {
+    $(document).on('click', '.follow', function () {
+        var target = $(this).data('target');
+        $.post(
+            target,
+            function(answer) {
+                if ($.parseJSON(answer.responseText).result == 'SUCCESS' == "SUCCESS") {
+                    $(document).find('.follow[data-target="' + target + '"]').fadeOut();
+                } else {
+                    alert('something was wrong')
+                }
+            }
+        );
+    });
+};
