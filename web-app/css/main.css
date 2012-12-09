@@ -516,3 +516,28 @@ input {
     top: -10px;
     left: -20px;
 }
+
+/*  ======================================================================
+    Follow button
+    ====================================================================== */
+
+.follow {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    background: url("../img/cross-sprite.png") 0 0 no-repeat;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    padding-left: 34px;
+    transition:background 1s linear;
+    -webkit-transition:background 1s linear;
+    -moz-transition:background 1s linear;
+    -o-transition:background 1s linear;
+    cursor: pointer;
+}
+
+.follow:hover {
+    color: #c60;
+    background-position: 0 -24px;
+}
