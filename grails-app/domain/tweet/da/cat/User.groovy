@@ -37,4 +37,8 @@ class User {
         nickname
     }
 
+    String getUserAvatar() {
+        return (!this.avatar) ? "/img/default_ava.png" : this.avatar
+    }
+
 }
