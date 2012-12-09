@@ -18,7 +18,7 @@ environments {
         dataSource {
             pooled = true
             driverClassName = "com.mysql.jdbc.Driver"
-            url = "jdbc:mysql://i2dev.ru/tweet_da_cat"
+            url = "jdbc:mysql://i2dev.ru/tweet_da_cat?useUnicode=yes&characterEncoding=UTF-8"
             dbCreate = "update"
             username = "tweet_da_cat"
             password = "agent007"
@@ -39,19 +39,13 @@ environments {
     }
     production {
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
             pooled = true
-            properties {
-               maxActive = -1
-               minEvictableIdleTimeMillis=1800000
-               timeBetweenEvictionRunsMillis=1800000
-               numTestsPerEvictionRun=3
-               testOnBorrow=true
-               testWhileIdle=true
-               testOnReturn=true
-               validationQuery="SELECT 1"
-            }
+            driverClassName = "com.mysql.jdbc.Driver"
+            url = "jdbc:mysql://i2dev.ru/tweet_da_cat_prod?useUnicode=yes&characterEncoding=UTF-8"
+            dbCreate = "update"
+            username = "tweet_da_cat"
+            password = "agent007"
+            dialect = org.hibernate.dialect.MySQL5InnoDBDialect
         }
     }
 }
