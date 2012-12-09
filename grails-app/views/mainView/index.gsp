@@ -3,13 +3,13 @@
         <h1 class="title">
             <span class="filter-feeds" data-url="${createLink(controller: 'feed', action: 'changeViewType')}"
                   data-value="${tweet.da.cat.FeedsService.ALL_VIEW_TYPE}">
-                All Da Catz
+                Все котики
             </span>
             <g:if test="${session.userId}">
                 / <span class="filter-feeds inactive"
                         data-url="${createLink(controller: 'feed', action: 'changeViewType')}"
                         data-value="${tweet.da.cat.FeedsService.FOLLOWING_VIEW_TYPE}">
-                Just Ma Cat
+                Мои котики
             </span>
             </g:if>
         </h1>

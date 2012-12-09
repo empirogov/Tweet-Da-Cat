@@ -1,24 +1,45 @@
 <g:applyLayout name="main">
+    <div class="profile-wrapper">
+   <div class="profile-form-wrapper" style="float: left;">
     <g:form method="post" action="update" id="${user.id}" enctype="multipart/form-data">
-        <p>Name:</p>
-        <p><g:textField name="nickname" value="${user.nickname}"/></p>
 
-        <p>Name:</p>
+        <div class="field-box">
+            <div class="field-help">Логин:</div>
+            <g:textField name="nickname" value="${user.nickname}"/>
+            <div class="clear"></div>
+        </div>
 
-        <p><g:textField name="name" value="${user.name}"/></p>
+        <div class="field-box">
+            <div class="field-help">Полное имя:</div>
+            <g:textField name="name" value="${user.name}"/>
+            <div class="clear"></div>
+        </div>
 
-        <p>Name:</p>
+        <div class="field-box">
+            <div class="field-help">E-mail:</div>
+            <g:textField name="email" value="${user.email}"/>
+            <div class="clear"></div>
+        </div>
 
-        <p><g:textField name="email" value="${user.email}"/></p>
+        <input type="submit" value="Сохранить">
 
-
-        <input type="submit" value="Save">
     </g:form>
+   </div>
 
+    <div class="profile-form-wrapper" style="float: right; border-left: 1px solid grey;">
     <g:form action="updateAvatar" method="post" enctype="multipart/form-data" id="${user.id}">
-        <p>Avatar:</p>
+
         <img src="${user.avatar}" alt="">
-        <input type="file" name="avatar" />
-        <input type="submit" value="Save">
+        <div class="field-box">
+            <div class="field-help">Аватарк:</div>
+            <input type="file" name="avatar" />
+            <div class="clear"></div>
+        </div>
+
+        <input type="submit" value="Сохранить">
     </g:form>
+    </div>
+
+    <div class="clear"></div>
+    </div>
 </g:applyLayout>

@@ -19,7 +19,7 @@ class FeedsService {
                 order: 'desc') {
             def viewType = getViewType()
             author {
-                if (viewType.equals(FOLLOWING_VIEW_TYPE)) {
+                if (viewType.equals(FOLLOWING_VIEW_TYPE) && authService.isLogged()) {
                     def ids = authService.user.following*.id as ArrayList<Long>
                     ids.add(authService.user.id)
                     if (ids && ids.size()) {

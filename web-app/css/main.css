@@ -265,7 +265,7 @@ a.login:hover{
     margin-left: 10px;
     overflow: hidden;
 }
-.message input[type="button"]{
+.message input[type="submit"]{
     display: block;
     float: right;
     height: 66px;
@@ -280,14 +280,49 @@ a.login:hover{
     -moz-transition:background 1s linear, color 1s linear;
     -o-transition:background 1s linear, color 1s linear;
 }
-.message input[type="button"]:hover{
+.message input[type="submit"]:hover{
     background: url(../img/down_hv.png) no-repeat center 37px #ffffff;
     color: #C60;
 }
-.message textarea, .message input[type="button"]{
+.message textarea, .message input[type="submit"]{
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+}
+.profile-wrapper {
+    margin: 20px;
+}
+.profile-form-wrapper {
+    margin: 20px 0;
+}
+.profile-form-wrapper img {
+    width: 170px;
+    height: 170px;
+    display:  block;
+    margin: 0 auto 20px;
+}
+
+.profile-form-wrapper input[type="submit"] {
+    background-color: #fff;
+    transition: color 1s linear;
+    -webkit-transition: color 1s linear;
+    -moz-transition: color 1s linear;
+    -o-transition: color 1s linear;
+    width: auto;
+    border: 1px solid grey;
+    padding: 10px;
+    margin-left: 10px;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 16px rgba(0,0,0,0.75);
+    box-shadow: 0 0 16px rgba(0,0,0,0.75);
+
+}
+.profile-form-wrapper input[type="submit"]:hover {
+    color: #c60;
 }
 /* ==========================================================================
    Footer
@@ -370,6 +405,14 @@ h1.title {
 }
 h1.title .inactive {
     color: #ccc;
+    cursor: pointer;
+    transition: color 0.6s linear;
+    -webkit-transition: color 0.6s linear;
+    -moz-transition: color 0.6s linear;
+    -o-transition: color 0.6s linear;
+}
+h1.title .inactive:hover {
+    color: #c60;
 }
 article.tweet-container {
     min-width: 460px;

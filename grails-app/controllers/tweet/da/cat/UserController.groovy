@@ -39,9 +39,9 @@ class UserController {
             user.properties = params
             if (user.save(flush: true)) {
                 flash.message = " Пользователь успешно обновлен"
-                redirect(action: 'show', id: user.id)
+                redirect(controller: "mainView", action: 'index')
             } else {
-                flash.message = " Пользователь успешно обновлен"
+                flash.message = " Ошибка при сохранении!"
                 render(view: 'profile', model: [user: user])
             }
         } else {
